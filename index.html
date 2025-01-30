@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Restaurant</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="cta-hamburger">
+            <button class="cta-button" onclick="reserveTable()">Reserve a Table</button>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Savor the Best Bergers in Town!</h1>
+            <p class="hero-subtitle">Handcrafted with love and fresh ingredients</p>
+            <div class="cta-buttons">
+                <a href="#menu" class="cta-btn explore-btn">Explore the Menu</a>
+                <a href="#reservation" class="cta-btn reserve-btn">Make a Reservation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="about-title">Welcome to Berger Hut!</h2>
+            <p class="about-introduction">
+                At Berger Hut, we serve the juiciest, most flavorful bergers made with local, fresh ingredients. 
+                Our mission is simple: to provide an unforgettable dining experience with the finest handcrafted bergers in town.
+            </p>
+            <h3 class="about-subtitle">Our Story</h3>
+            <p class="about-story">
+                Founded on the principles of quality, sustainability, and innovation, Berger Hut takes pride in every burger we serve. 
+                From locally sourced ingredients to eco-friendly practices, we strive to create something truly special for our guests.
+            </p>
+            <div class="about-image">
+                <img src="./img/ourStory.jpeg" alt="Restaurant Interior or Chefs in Action">
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="menu-header">
+            <h2 class="menu-title">Our Featured Dishes</h2>
+            <p class="menu-description">Explore our signature burgers, handcrafted with fresh, local ingredients.</p>
+        </div>
+
+        <!-- Featured Dishes -->
+        <div class="menu-dishes">
+            <div class="dish-item">
+                <img src="./img/SignatureChickenBurger.jpeg" alt="Signature Beef Burger">
+                <h3 class="dish-name">Signature Chicken Burger</h3>
+                <p class="dish-description">Juicy Chicken patty, melted cheese, fresh lettuce, and our special sauce. A true classic!</p>
+            </div>
+            <div class="dish-item">
+                <img src="./img/SpicyGrilledChickenBurger.jpeg" alt="Grilled Chicken Burger">
+                <h3 class="dish-name">Spicy Grilled Chicken Burger</h3>
+                <p class="dish-description">A fiery Grilled Chicken Burger with tender, spiced chicken, crisp lettuce, juicy tomato, zesty sriracha mayo, and a toasted bun.</p>
+            </div>
+            <div class="dish-item">
+                <img src="./img/VeggieBurger.jpeg" alt="Veggie Burger">
+                <h3 class="dish-name">Veggie Burger</h3>
+                <p class="dish-description">A savory mix of fresh vegetables, beans, and spices, served with a delicious plant-based patty.</p>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="menu-categories">
+            <div class="category">
+                <h3 class="category-title">Chicken Burgers</h3>
+                <p>Explore our juicy Chicken options with premium toppings and sauces.</p>
+            </div>
+            <div class="category">
+                <h3 class="category-title">Chicken Burgers</h3>
+                <p>From grilled to crispy, our chicken burgers are tender and flavorful.</p>
+            </div>
+            <div class="category">
+                <h3 class="category-title">Veggie Burgers</h3>
+                <p>For a plant-based experience, try our hearty veggie burgers.</p>
+            </div>
+            <div class="category">
+                <h3 class="category-title">Desserts</h3>
+                <p>Indulge in our delicious desserts to end your meal on a sweet note.</p>
+            </div>
+            <div class="category">
+                <h3 class="category-title">Drinks</h3>
+                <p>Refreshing beverages to pair with your meal, from sodas to milkshakes.</p>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="menu-cta">
+            <a href="menu-page.html" class="cta-btn">See Full Menu</a>
+        </div>
+    </section>
+
+    <!-- Reservation Form Section -->
+    <section id="reservation" class="reservation">
+        <div class="reservation-container">
+            <h2 class="reservation-title">Make a Reservation</h2>
+            <p class="reservation-description">Please fill out the form below to reserve your table at Berger Hut.</p>
+
+            <!-- Reservation Form -->
+            <form id="reservation-form" class="reservation-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date-time">Date and Time</label>
+                    <input type="datetime-local" id="date-time" name="date-time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" name="guests" placeholder="Enter number of guests" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="special-requests">Special Requests</label>
+                    <textarea id="special-requests" name="special-requests" rows="4" placeholder="Any special requests?" ></textarea>
+                </div>
+
+                <button type="submit" class="cta-btn">Reserve Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="testimonials-header">
+            <h2 class="testimonials-title">What Our Customers Say</h2>
+            <p class="testimonials-description">Don't just take our word for it, hear from our happy customers!</p>
+        </div>
+
+        <!-- Customer Reviews -->
+        <div class="testimonials-reviews">
+            <div class="review">
+                <div class="review-header">
+                    <img src="./img/JohnDoe.jpeg" alt="Customer 1" class="review-img">
+                    <div class="review-info">
+                        <h3 class="review-name">John Doe</h3>
+                        <div class="review-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"The best burgers I’ve ever had! The flavors are amazing and the service was top-notch. Highly recommend!"</p>
+            </div>
+
+            <div class="review">
+                <div class="review-header">
+                    <img src="./img/EmilyJohnson.jpg" alt="Customer 2" class="review-img">
+                    <div class="review-info">
+                        <h3 class="review-name">Emily Smith</h3>
+                        <div class="review-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"I love how fresh and juicy the burgers are! Definitely my go-to spot for a delicious meal."</p>
+            </div>
+
+            <div class="review">
+                <div class="review-header">
+                    <img src="./img/MarkJohnson.jpeg" alt="Customer 3" class="review-img">
+                    <div class="review-info">
+                        <h3 class="review-name">Mark Johnson</h3>
+                        <div class="review-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span>
+                            <span class="star">&#9734;</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"The veggie burger was surprisingly good! A great option for both vegetarians and meat-lovers."</p>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="testimonials-cta">
+            <a href="reviews-page.html" class="cta-btn">Read More Reviews</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="gallery-header">
+            <h2 class="gallery-title">Our Gallery</h2>
+            <p class="gallery-description">Take a closer look at the delicious burgers and the vibrant atmosphere at Berger Hut!</p>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="gallery-grid">
+            <!-- Dish Image -->
+            <div class="gallery-item">
+                <img src="./img/DeliciousBurger1.jpeg" alt="Delicious Burger 1" class="gallery-img">
+                <div class="overlay">
+                    <p class="overlay-text">Signature Burger</p>
+                </div>
+            </div>
+
+            <!-- Interior Image -->
+            <div class="gallery-item">
+                <img src="./img/RestaurantInterior1.jpeg" alt="Restaurant Interior" class="gallery-img">
+                <div class="overlay">
+                    <p class="overlay-text">Cozy Dining Area</p>
+                </div>
+            </div>
+
+            <!-- Team Image -->
+            <div class="gallery-item">
+                <img src="./img/OurTeam.jpeg" alt="Our Team" class="gallery-img">
+                <div class="overlay">
+                    <p class="overlay-text">Our Amazing Team</p>
+                </div>
+            </div>
+
+            <!-- Customer Image -->
+            <div class="gallery-item">
+                <img src="./img/HappyCustomer.jpeg" alt="Happy Customer" class="gallery-img">
+                <div class="overlay">
+                    <p class="overlay-text">Happy Customer Enjoying Their Meal</p>
+                </div>
+            </div>
+
+            <!-- Dish Image -->
+            <div class="gallery-item">
+                <img src="./img/DeliciousBurger2.jpeg" alt="Delicious Burger 2" class="gallery-img">
+                <div class="overlay">
+                    <p class="overlay-text">Juicy and Fresh</p>
+                </div>
+            </div>
+
+            <!-- Interior Image -->
+            <div class="gallery-item">
+                <img src="./img/RestaurantInterior2.jpeg" alt="Restaurant Interior" class="gallery-img">
+                <div class="overlay">
+                    <p class="overlay-text">Modern Ambiance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+        <div class="contact-header">
+            <h2 class="contact-title">Contact Us</h2>
+            <p class="contact-description">We'd love to hear from you! Reach out to us through the form or visit us at our location.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+            <form action="submit_form.php" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer">
+        <div class="footer-container">
+            <!-- Footer Navigation Links -->
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>   
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#reservation">Reservation</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank" class="social-icon">
+                    <img src="./img/facebook.webp" alt="Facebook" class="fb">
+                </a>
+                <a href="https://www.instagram.com/deen_ki_bate_21?igsh=MTFpOThsdXA4d3VvaQ==" target="_blank" class="social-icon">
+                    <img src="./img/instagram.png" alt="Instagram" class="ig">
+                </a>
+                <a href="https://www.linkedin.com/in/faisal-shaikh-3064582a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-icon" >
+                    <img src="./img/linkedln.webp" alt="Linkedin" class="li">
+                </a>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="legal-links">
+                <ul>
+                    <li><a href="/privacy-policy" target="_blank">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service" target="_blank">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Copyright Info -->
+            <div class="copyright">
+                <p>© 2024 Berger Hut. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
